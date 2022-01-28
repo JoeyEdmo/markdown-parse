@@ -1,5 +1,8 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 import org.junit.Test;
@@ -10,7 +13,7 @@ public class MarkdownParseTest {
         assertEquals(5, 5+1-1);
     }
     @Test
-    public void parseTestOne() throws IOException{
+    public void parseTestOne() {
         Path fileName = Path.of("test-file.md");
 	    String contents = Files.readString(fileName);
         List<String> whatever = List.of("https://something.com", "some-page.html");
