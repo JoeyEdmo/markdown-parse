@@ -13,7 +13,7 @@ public class MarkdownParseTest {
         assertEquals(5, 5+1-1);
     }
     @Test
-    public void parseTestOne() {
+    public void parseTestOne() throws IOException{
         Path fileName = Path.of("test-file.md");
 	    String contents = Files.readString(fileName);
         List<String> whatever = List.of("https://something.com", "some-page.html");
