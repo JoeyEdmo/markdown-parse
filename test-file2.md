@@ -1,3 +1,3 @@
 # Title
 
-[new link)(https://google.com)
+(new link)(https://google.com)
