@@ -2,7 +2,7 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
 
 public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
@@ -12,15 +12,19 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
-            if(nextOpenBracket == -1){
-                throw new IllegalArgumentException("incorrect brackets");
+            if (nextOpenBracket == -1){
+                System.out.println("Invalid Input");
+                throw new IllegalArgumentException();
+            }
+            while (nextOpenBracket > 0 && markdown.charAt(nextOpenBracket-1)=='!'){
+                nextOpenBracket = markdown.indexOf("[", nextOpenBracket+1);
             }
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            System.out.println(nextCloseBracket);
         }
         return toReturn;
     }
