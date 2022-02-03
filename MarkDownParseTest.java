@@ -25,8 +25,4 @@ public class MarkdownParseTest {
         List<String> test2 = List.of("https://something.com","some-page.html");
         assertEquals("test 2", test2, MarkdownParse.getLinks(contents));
     }
-    @Test
-    public void parseTestThree() throws IOException{
-        assertEquals("fail", 3, 5);
-    }
 }
