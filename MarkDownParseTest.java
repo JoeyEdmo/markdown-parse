@@ -26,3 +26,4 @@ public class MarkdownParseTest {
         assertEquals("test 2", test2, MarkdownParse.getLinks(contents));
     }
 }
+//test
