@@ -1,4 +1,4 @@
 test : MarkdownParse.class
-	java MarkdownParse
+	java MarkdownParse test-file.md
 MarkdownParse.class : MarkdownParse.java
 	javac MarkdownParse.java
