@@ -25,6 +25,13 @@ public class MarkdownParseTest {
         List<String> test2 = List.of("https://i.imgur.com/kW021Ap.png","google.com");
         assertEquals("test 2", test2, MarkdownParse.getLinks(contents));
     }
+    @Test
+    public void parseTestThree() throws IOException{
+        Path fileName = Path.of("4-file-1.md");
+        String contents = Files.readString(fileName);
+        List<String> test3 = List.of("url.com","`google.com", "google.com", "ucsd.edu" );
+        assertEquals("test 3", test3, MarkdownParse.getLinks(contents));
+    }
 }
 
 //test
